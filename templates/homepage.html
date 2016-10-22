@@ -1,0 +1,21 @@
+{% extends "admin/base.html" %}
+{% block title %} Login {% endblock %}
+{% block branding %}
+
+{% endblock %}
+	
+{% block content %}
+	{% load static %}	
+	<!--<img src="{% static 'sistema/images/Portada_Inicio.jpg' %}" alt="My image"/>-->
+	<!--<div style="background-image: url({% static 'sistema/images/Portada_Inicio.jpg'%}); height: 650px; width: 1920px;">-->
+	{% if user.is_authenticated %}
+	    <p>Bienvenido, <b>{{user.username}} | <a href="{% url 'logout' %}">Logout</a></b> </p>
+	{% else %}
+	    <p>Bienvenido al sistema de gestión de tráfico. Por favor <a href="{% url 'login' %}">Iniciar sesión </a></p>
+	{% endif %}		
+{% endblock %}
+{% block sidebar %}
+	<!--<p><a href="{% url 'homepage' %}">Inicio</a> | <a href="{% url 'buscar' %}">Buscar</a></p>-->
+{% endblock %}
+
+

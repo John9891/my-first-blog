@@ -1,0 +1,275 @@
+<!doctype>
+<html> 
+<head> 
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="description" content="Descripción del sitio">
+    <meta name="keywords" content="Aqui, Palabras, Clave">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href= "{% static 'sistema/css/estilos.css'%}">
+    <link rel="stylesheet" href= "{% static 'sistema/css/fonts.css'%}">
+    <link rel="stylesheet" href= "{% static 'sistema/css/estilos_reloj.css'%}">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="{% static 'sistema/js/jquery.slides.js'%}"></script>
+
+    <script>
+    $(function(){
+      $(".slides_container").slidesjs({
+        
+      });
+    });
+  </script>
+  <script type=text/javascript>
+function recarga(){
+location.href=location.href
+}
+setInterval('recarga()',30000)	
+</script>
+
+    <title>SISTEMA DE GESTION DE TRÁFICO</title>     
+</head> 
+<body>
+	<script type="text/javascript" src="{% static 'sistema/js/intro.js'%}"></script>
+	<div class="contenedor">
+
+		<header>
+			<div id="subheader">
+				<div id="logotipo"> <p><a href="">Sistema de gestión en tiempo real</a></p></div>
+				{% if user.is_authenticated %}
+	    		<div id="log">Bienvenido, <b>{{user.username}} | <a href="{% url 'logout' %}">Logout</a></b> 
+	    		<a href="{% url 'home' %}">Inicio</a></div>
+				{% else %}
+	    		<div id="log">Bienvenido. Por favor <a href="{% url 'login' %}">log in </a><a href="{% url 'home' %}">Inicio</a></div>
+				{% endif %}
+
+				
+					<div class="wrap">
+					<div class="widget">						
+						<table>
+							<tr>
+								<td>							
+									<div class="fecha">
+										<p id="diaSemana" class="diaSemana"></p>
+										<p id="dia" class="dia"></p>
+										<p>de</p>
+										<p id="mes" class="mes"></p>
+										<p>del</p>
+										<p id="year" class="year"></p>
+									</div>
+								</td>
+								<td>
+									<div class="reloj">
+									<p id="horas" class="horas"></p>
+									<p>:</p>
+									<p id="minutos" class="minutos"></p>
+									<p>:</p>
+									<p id="segundos" class="segundos"></p>
+									<div class="caja-segundos">
+										<p id="ampm" class="ampm"></p>
+													
+									</div>			
+									</div>						
+								</td>
+								
+
+							</div>
+						</div>
+						</tr>		
+						</table>
+											
+			</div>
+		</header>
+
+		<section id="wrap">
+			<section id="main">
+
+				<!--<section class="slideshow">
+					<div class="slides_container">
+						<img src="{% static 'sistema/images/slideshow/slideshow1.jpg'%}">
+						<img src="{% static 'sistema/images/slideshow/slideshow2.jpg'%}">
+					</div>
+				</section>-->
+
+				<section id="bienvenidos_gestion">					
+					<hgroup><h2>SOLICITUDES DE BUSES PENDIENTES POR DESPACHAR</h2></hgroup>
+					<table>
+						<tr>
+							<td><h3>Número actual</h3></td>
+							<td><h3>Código de Ruta</h3></td>
+							<td><h3>Fecha de solicitud</h3></td>
+							<td><h3>Hora</h3></td>
+							<td><h3>Tiempo de Espera</h3></td>							
+						</tr>
+						<tr>						
+							{% if not estado_81 %}
+								<td>{{ num_solicitud_81 }}</td>
+								<td>81</td>
+								<td>{{ fecha_81 }}</td>
+								<td>{{ hora_81 }}</td>
+								<td>{{ tiempo_81 }}</td>								
+								<td><a class="btn" href="81"><i class="icon-plus"></i><h2>Despachar ruta 81</h2></a></td>
+							{% endif %}						
+						</tr>
+						<tr>
+							{% if not estado_82 %}
+								<td>{{ num_solicitud_82 }}</td>
+								<td>82</td>
+								<td>{{ fecha_82 }}</td>
+								<td>{{ hora_82 }}</td>
+								<td>{{ tiempo_82 }}</td>								
+								<td><a class="btn" href="82"><i class="icon-plus"></i><h2>Despachar ruta 82</h2></a></td>						
+						{% endif %}													
+						</tr>
+						<tr>
+							{% if not estado_83 %}
+								<td>{{ num_solicitud_83 }}</td>
+								<td>83</td>
+								<td>{{ fecha_83 }}</td>
+								<td>{{ hora_83 }}</td>
+								<td>{{ tiempo_83 }}</td>								
+								<td><a class="btn" href="83"><i class="icon-plus"></i><h2>Despachar ruta 83</h2></a></td>					
+							{% endif %}					
+						</tr>							
+					</table>
+					<br>
+					<hr>
+					<br>
+
+					<hgroup><h2>ULTIMAS SOLICITUDES DE BUSES DESPACHADAS</h2></hgroup>
+					<table>
+						<tr>
+							<td><h3>Número actual</h3></td>
+							<td><h3>Código de Ruta</h3></td>
+							<td><h3>Fecha de despacho</h3></td>
+							<td><h3>Hora</h3></td>
+							<td><h3>Tiempo de Espera</h3></td>							
+						</tr>
+						<tr>						
+							<td>{% for lista in lista_solic %}
+								<li>{{ lista }}</li>
+								{% endfor %}								
+							</td>
+							<td>{% for lista in lista_solic_rut %}
+								<li>{{ lista }}</li>
+								{% endfor %}								
+							</td>
+							<td>{% for lista in lista_solic_fec %}
+								<li>{{ lista }}</li>
+								{% endfor %}								
+							</td>
+							<td>{% for lista in lista_solic_hora %}
+								<li>{{ lista }}</li>
+								{% endfor %}								
+							</td>
+							<td>{% for lista in lista_solic_espera %}
+								<li>{{ lista }}</li>
+								{% endfor %}						
+							</td>									
+						</tr>										
+					</table>
+						
+				<script type="text/javascript" src="{% static 'sistema/js/funciones.js'%}"></script>	
+				</section>
+				<section id="bienvenidos_gestion">		
+
+					<hgroup><h2>BUSES EN TRÁNSITO</h2></hgroup>
+					<table>
+						<tr>
+							<td><h3>Número de bus</h3></td>
+							<td><h3>Ruta prestada</h3></td>
+							<td><h3>Capacidad del bus</h3></td>												
+						</tr>
+						<tr>						
+							<td>{% for lista in lista_buses %}
+								<li>{{ lista }}</li>
+								{% endfor %}								
+							</td>
+							<td>
+								{% for lista in lista_rutas %}
+								<li>{{ lista }}</li>
+								{% endfor %}																
+							</td>
+							<td>
+								{% for lista in lista_capacidades %}
+								<li>{{ lista }}</li>
+								{% endfor %}								
+							</td>
+							<td>
+								{% for lista in lista_buses %}
+								<li><a class="btn" href= "/login/llegada/{{ lista }}"><i class="icon-plus"></i><h2>Registrar llegada de bus {{ lista }}</h2></a></li>
+								{% endfor %}								
+							</td>						
+						</tr>																					
+					</table>					
+						
+				<script type="text/javascript" src="{% static 'sistema/js/funciones.js'%}"></script>	
+				</section>
+
+				<!--<section id="contenido">
+					<article>
+						<hgroup><h2 class="title">Título del artículo</h2></hgroup>
+						<p class="fecha">02 de septiembre de 2016</p>
+						<img class="thumb" src="{% static 'sistema/images/parrafo1.jpg'%}" alt="ImgArticulo1"/>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquam, metus ac egestas blandit, mauris libero imperdiet urna, non gravida ligula erat ut erat. Pellentesque nisi dui, ornare nec ultrices vestibulum, placerat in quam. Vivamus iaculis eros vitae condimentum rutrum. Sed gravida rhoncus augue vel pretium.
+						</p>
+					</article>
+					<article>
+						<hgroup><h2 class="title">Título del artículo</h2></hgroup>
+						<p class="fecha">02 de septiembre de 2016</p>
+						<img class="thumb" src="{% static 'sistema/images/parrafo2.jpg'%}" alt="ImgArticulo2"/>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquam, metus ac egestas blandit, mauris libero imperdiet urna, non gravida ligula erat ut erat. Pellentesque nisi dui, ornare nec ultrices vestibulum, placerat in quam. Vivamus iaculis eros vitae condimentum rutrum. Sed gravida rhoncus augue vel pretium.
+						</p>
+					</article>
+				</section>
+
+				<aside>
+					<section class="widget">
+						<h3>Enlaces de operación</h3>
+						<ul>
+							<li><a href="#">Optimización de rutas diarias.</a></li>
+							<li><a href="#">Sistema de gestión real.</a></li>
+							<li><a href="#">Análisis histórico de información.</a></li>
+							<li><a href="#">Donec vitae velit at nisl vulputate.</a></li>
+						    <li><a href="#">Nulla consectetur turpis at nisl posuere viverra.</a></li>
+						</ul>
+					</section>
+
+					<section class="widget">
+						<h3>Artículos recomendados</h3>
+						<img src="{% static 'sistema/images/widget.jpg'%}" alt="widget">
+					</section>
+				</aside>-->
+				
+			</section>
+
+			<footer>
+				<section id="acerca_de">
+					<article>
+						<hgroup><h3>Acerca de esta página</h3></hgroup>
+						<p>
+							Esta página fue creada como parte del proyecto de grado titulado "Diseño de un módulo prototipo para la gestión de buses alimentadores de un sistema BRT, mediante el uso de tecnología NFC, desarrollado por los estudiantes Brayan Jampaer Buitrago Latorre y John Alexander Gutierrez Lizarazo, como requsitio para optar al título de Ingeniero Electrónico. Este proyecto fue dirigido por el PH.D. Roberto Ferro Escobar
+						</p>
+					</article>
+				</section>
+				<section id="redes">
+					<div class="Youtube"><a href="#"></a></div>
+					<div class="Facebook"><a href="#"></a></div>
+					<div class="Twitter"><a href="#"></a></div>
+					<div class="Google"><a href="#"></a></div>
+				</section>
+			</footer>
+
+			<div id="Copyright"><p>Universidad Distrital Francisco José de Caldas</p>
+			<p>Facultad de Ingeniería - Ingeniería Electrónica</p><p>2016</p></div>
+
+		</section>
+	</div>
+
+	
+<script src="{% static 'sistema/js/intro.js'%}"></script>
+
+</body> 
+</html> 

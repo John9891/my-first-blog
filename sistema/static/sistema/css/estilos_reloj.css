@@ -1,0 +1,55 @@
+@import url(reset.css);
+@import url(fuentes.css);
+
+
+
+.wrap tr td{
+	width: 90%;
+	max-width: 900px;
+}
+
+.widget tr td{
+	width: 20%;
+	margin: 2em;
+}
+
+.widget p{
+	display: inline-block;
+	line-height: 1em;
+}
+
+.fecha{
+	font-family: sourcesans-light;
+	text-align: center;
+	font-size: 1em;
+	color: #fff;
+	margin-bottom: 0.3125rem;
+	margin-right: 0.5rem;
+	background: rgba(0,0,0,.5);
+	padding: 2px;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.reloj{
+	font-family: sourcesans-light;
+	width: 100%;
+	padding: 2px;
+	color: #fff;
+	font-size: 1em;
+	margin-left: 0.5rem;
+	text-align: center;
+	background: rgba(0,0,0,.5);
+	border-radius: 5px;
+}
+
+.reloj .caja-segundos{
+	display: inline-block;
+}
+
+.reloj .ampm{
+	font-size: 0.8rem;	
+}
+
+
+

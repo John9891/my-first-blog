@@ -1,0 +1,127 @@
+<!doctype>
+<html> 
+<head> 
+	<meta charset="UTF-8">
+	<meta name="description" content="Descripción del sitio">
+    <meta name="keywords" content="Aqui, Palabras, Clave">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href= "{% static 'sistema/css/estilos.css'%}">
+    <link rel="stylesheet" href= "{% static 'sistema/css/fonts.css'%}">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="{% static 'sistema/js/jquery.slides.js'%}"></script>
+
+    <script>
+    $(function(){
+      $(".slides_container").slidesjs({        
+      });
+    });
+  </script>
+
+    <title>SISTEMA DE GESTION DE TRÁFICO</title>
+
+</head> 
+<body>
+	<div class="contenedor">
+
+		<header>
+			<div id="subheader">
+				<div id="logotipo"> <p><a href="">Sistema de gestión de buses alimentadores de un sistema BRT</a></p></div>								
+				<nav>
+					{% if user.is_authenticated %}
+		    		<div id="log">Bienvenido, <b>{{user.username}} | <a href="{% url 'logout' %}">Logout</a></b> </div>
+					{% else %}
+		    		<div id="log">Bienvenido. Por favor <a href="{% url 'login' %}">log in </a></div>
+					{% endif %}
+				</nav>
+			</div>
+		</header>
+
+		<section id="wrap">
+			<section id="main">
+
+				<section class="slideshow">
+					<div class="slides_container">
+						<img src="{% static 'sistema/images/slideshow/slideshow1.jpg'%}">
+						<img src="{% static 'sistema/images/slideshow/slideshow2.jpg'%}">
+					</div>
+
+				</section>
+
+				<section id="bienvenidos">
+					<article>
+						<hgroup><h2>Gestor de tráfico rutas alimentadoras</h2></hgroup>
+						<p>
+							<ul>							
+							    <li>El gestor de tráfico permito administrar la demanda de las rutas alimentadoras en tiempo real para ofrecer un mejor servicio a los usuarios principalmente durante las horas pico del sistema donde se requieren mejorar los indicadores de calidad, haciendo más cómodo y accesible el uso del transporte público.</li><li> Además, permite optimizar el uso de los recursos del operador de transporte y del usuario a corto y mediano plazo.</li>
+
+							</ul>
+						</p>
+					</article>
+				</section>
+
+				<section id="contenido">
+					<article>
+						<hgroup><h2 class="title">Sistema de monitoreo en tiempo real</h2></hgroup>
+						<p class="fecha">04 de octubre de 2016</p>
+						<img class="thumb" src="{% static 'sistema/images/parrafo1.jpg'%}" alt="ImgArticulo1"/>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquam, metus ac egestas blandit, mauris libero imperdiet urna, non gravida ligula erat ut erat. Pellentesque nisi dui, ornare nec ultrices vestibulum, placerat in quam. Vivamus iaculis eros vitae condimentum rutrum. Sed gravida rhoncus augue vel pretium.
+						</p>
+					</article>
+					<article>
+						<hgroup><h2 class="title">Análisis de información histórica del sistema</h2></hgroup>
+						<p class="fecha">04 de octubre de 2016</p>
+						<img class="thumb" src="{% static 'sistema/images/parrafo2.jpg'%}" alt="ImgArticulo2"/>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquam, metus ac egestas blandit, mauris libero imperdiet urna, non gravida ligula erat ut erat. Pellentesque nisi dui, ornare nec ultrices vestibulum, placerat in quam. Vivamus iaculis eros vitae condimentum rutrum. Sed gravida rhoncus augue vel pretium.
+						</p>
+					</article>
+				</section>
+,
+				<aside>
+					<section class="widget">
+						<h3>Enlaces de operación</h3>
+						<ul>
+							<li><a href="{% url 'solicitudes' %}">Sistema de gestión real.</a></li>
+							<li><a href="#">Optimización de rutas diarias.</a></li>			
+							<li><a href="#">Análisis histórico de información.</a></li>
+							<li><a href={% url "admin:index" %}>Administración del sistema.</a></li>						    
+						</ul>
+					</section>
+
+					<section class="widget">
+						<h3>Enlaces recomendados</h3>
+						<img src="{% static 'sistema/images/widget.jpg'%}" alt="widget">
+					</section>
+				</aside>
+				
+			</section>
+
+			<footer>
+				<section id="acerca_de">
+					<article>
+						<hgroup><h3>Acerca de esta página</h3></hgroup>
+						<p>
+							Esta página fue creada como parte del proyecto de grado titulado "Diseño de un módulo prototipo para la gestión de buses alimentadores de un sistema BRT, mediante el uso de tecnología NFC, desarrollado por los estudiantes Brayan Jampaer Buitrago Latorre y John Alexander Gutierrez Lizarazo, como requsitio para optar al título de Ingeniero Electrónico. Este proyecto fue dirigido por el PH.D. Roberto Ferro Escobar
+						</p>
+					</article>
+				</section>
+				<section id="redes">
+					<div class="Youtube"><a href="#"></a></div>
+					<div class="Facebook"><a href="#"></a></div>
+					<div class="Twitter"><a href="#"></a></div>
+					<div class="Google"><a href="#"></a></div>
+				</section>
+			</footer>
+
+			<div id="Copyright"><p>Universidad Distrital Francisco José de Caldas</p>
+			<p>Facultad de Ingeniería - Ingeniería Electrónica</p><p>2016</p></div>
+
+		</section>
+	</div>
+<!--<script src="{% static 'sistema/js/intro.js'%}"></script>-->
+
+
+</body> 
+</html> 
