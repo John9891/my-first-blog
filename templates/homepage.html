@@ -1,15 +1,18 @@
 {% extends "admin/base.html" %}
-{% block title %} Login {% endblock %}
-{% block branding %}
+{% block title %} Logueo{% endblock %}
 
+{% block branding %}
+<div id="logotipo" style="width:1200px; text-align: center;float: center"> <p><a href="" style="font-family: sourcesans-light;font-size: 20px;color: #FFFFFF;">Sistema de gestión de buses alimentadores de un sistema BRT </a></p>
+</div>
 {% endblock %}
-	
+
 {% block content %}
 	{% load static %}	
 	<!--<img src="{% static 'sistema/images/Portada_Inicio.jpg' %}" alt="My image"/>-->
 	<!--<div style="background-image: url({% static 'sistema/images/Portada_Inicio.jpg'%}); height: 650px; width: 1920px;">-->
 	{% if user.is_authenticated %}
 	    <p>Bienvenido, <b>{{user.username}} | <a href="{% url 'logout' %}">Logout</a></b> </p>
+	    <p>Ingresar a la <a href="{% url 'home' %}">Homepage</a></p>
 	{% else %}
 	    <p>Bienvenido al sistema de gestión de tráfico. Por favor <a href="{% url 'login' %}">Iniciar sesión </a></p>
 	{% endif %}		

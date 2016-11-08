@@ -1,5 +1,5 @@
 from django.contrib import admin
-from sistema.models import Origen, RutaAlimentadora, TipoDia, ListaDias, HorarioRecorrido, Usuario, TiempoAsignacion, BusAlimentador, HorarioOperador, Operador, Despacho
+from sistema.models import Origen, RutaAlimentadora, TipoDia, ListaDias, HorarioRecorrido, Usuario, TiempoAsignacion, BusAlimentador, Operador, Despacho
 
 class OrigenAdmin(admin.ModelAdmin):
     list_display = ('CodOrigen', 'NombreOrigen')
@@ -53,7 +53,7 @@ admin.site.register(TiempoAsignacion,TiempoAsignacionAdmin)
 admin.site.register(BusAlimentador, BusAlimentadorAdmin)
 admin.site.register(Despacho, DespachoAdmin)
 #admin.site.register(BusesDisponibles)
-admin.site.register(HorarioOperador)
+#admin.site.register(HorarioOperador)
 admin.site.register(Operador)
 
 

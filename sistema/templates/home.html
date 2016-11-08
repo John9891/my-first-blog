@@ -42,18 +42,18 @@
 
 				<section class="slideshow">
 					<div class="slides_container">
-						<img src="{% static 'sistema/images/slideshow/slideshow1.jpg'%}">
-						<img src="{% static 'sistema/images/slideshow/slideshow2.jpg'%}">
+						<img src="{% static 'sistema/images/slideshow/brt1.jpg'%}">
+						<img src="{% static 'sistema/images/slideshow/brt2.jpg'%}">
 					</div>
 
 				</section>
 
 				<section id="bienvenidos">
 					<article>
-						<hgroup><h2>Gestor de tráfico rutas alimentadoras</h2></hgroup>
+						<hgroup><h2>Gestor de tráfico de rutas alimentadoras</h2></hgroup>
 						<p>
 							<ul>							
-							    <li>El gestor de tráfico permito administrar la demanda de las rutas alimentadoras en tiempo real para ofrecer un mejor servicio a los usuarios principalmente durante las horas pico del sistema donde se requieren mejorar los indicadores de calidad, haciendo más cómodo y accesible el uso del transporte público.</li><li> Además, permite optimizar el uso de los recursos del operador de transporte y del usuario a corto y mediano plazo.</li>
+							    <li>El gestor de tráfico permite administrar la demanda de las rutas alimentadoras en tiempo real, para ofrecer mejores niveles de servicio a los usuarios principalmente durante las horas pico del sistema donde se requieren reducir los costes de viaje de los usuarios, haciendo más cómodo, accesible y eficiente el uso del transporte multimodal.</li><li> Además, permite optimizar el uso de los recursos del operador de transporte y del usuario a corto y mediano plazo.</li>
 
 							</ul>
 						</p>
@@ -63,20 +63,20 @@
 				<section id="contenido">
 					<article>
 						<hgroup><h2 class="title">Sistema de monitoreo en tiempo real</h2></hgroup>
-						<p class="fecha">04 de octubre de 2016</p>
-						<img class="thumb" src="{% static 'sistema/images/parrafo1.jpg'%}" alt="ImgArticulo1"/>
+						<!--<p class="fecha">04 de octubre de 2016</p>-->
+						<img class="thumb" src="{% static 'sistema/images/gestion_real_ok.png'%}" alt="ImgArticulo1"/>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquam, metus ac egestas blandit, mauris libero imperdiet urna, non gravida ligula erat ut erat. Pellentesque nisi dui, ornare nec ultrices vestibulum, placerat in quam. Vivamus iaculis eros vitae condimentum rutrum. Sed gravida rhoncus augue vel pretium.
+							Esta aplicación contiene un módulo de despacho en tiempo real, donde se recibe la información del flujo de usuarios en cada una de las rutas alimentadoras, mediante las solicitudes enviadas por parte de los módulos NFC conectados a cada parada. Los módulos NFC se encuentran configurados de acuerdo a los parámetros de operación de cada ruta, los cuales son actualizados según estudios de demanda realizados previamente. Esto le permite al operador de rutas despachar buses de acuerdo a la demanda real, así como registrar la llegada de los buses que realizan cada trayecto programado.
 						</p>
 					</article>
 					<article>
-						<hgroup><h2 class="title">Análisis de información histórica del sistema</h2></hgroup>
-						<p class="fecha">04 de octubre de 2016</p>
+						<hgroup><h2 class="title">Historial de datos del sistema</h2></hgroup>
+						<!--<p class="fecha">04 de octubre de 2016</p>-->
 						<img class="thumb" src="{% static 'sistema/images/parrafo2.jpg'%}" alt="ImgArticulo2"/>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquam, metus ac egestas blandit, mauris libero imperdiet urna, non gravida ligula erat ut erat. Pellentesque nisi dui, ornare nec ultrices vestibulum, placerat in quam. Vivamus iaculis eros vitae condimentum rutrum. Sed gravida rhoncus augue vel pretium.
+							El gestor permite analizar la información almacenada de la demanda del sistema. Se puede verificar cada uno de los indicadores que entrega el sistema, para poder tomar decisiones en torno a la programación de rutas a mediano y largo plazo.
 						</p>
-					</article>
+					</article>					
 				</section>
 ,
 				<aside>
@@ -84,15 +84,14 @@
 						<h3>Enlaces de operación</h3>
 						<ul>
 							<li><a href="{% url 'solicitudes' %}">Sistema de gestión real.</a></li>
-							<li><a href="#">Optimización de rutas diarias.</a></li>			
-							<li><a href="#">Análisis histórico de información.</a></li>
-							<li><a href={% url "admin:index" %}>Administración del sistema.</a></li>						    
+							<li><a href="#">Análisis histórico de información.</a></li>													
+							<li><a href={% url "admin:index" %} target="_blank">Administración del sistema.</a></li>						    
 						</ul>
 					</section>
 
 					<section class="widget">
-						<h3>Enlaces recomendados</h3>
-						<img src="{% static 'sistema/images/widget.jpg'%}" alt="widget">
+						<h3>Simulación del sistema</h3>
+						<a title="Simulación" href="https://www.youtube.com/watch?v=gQopOxXoW_Y" target="_blank"><img src="{% static 'sistema/images/simulacion_ok.png'%}" alt="Simulación de la estación Banderas"></a>
 					</section>
 				</aside>
 				
@@ -103,15 +102,15 @@
 					<article>
 						<hgroup><h3>Acerca de esta página</h3></hgroup>
 						<p>
-							Esta página fue creada como parte del proyecto de grado titulado "Diseño de un módulo prototipo para la gestión de buses alimentadores de un sistema BRT, mediante el uso de tecnología NFC, desarrollado por los estudiantes Brayan Jampaer Buitrago Latorre y John Alexander Gutierrez Lizarazo, como requsitio para optar al título de Ingeniero Electrónico. Este proyecto fue dirigido por el PH.D. Roberto Ferro Escobar
+							Esta página fue creada como parte del proyecto de grado titulado "Diseño de un modelo de gestión para los buses alimentadores de la estación Banderas, perteneciente al sistema Transmilenio de la ciudad de Bogota D.C, desarrollado por los estudiantes Brayan Jampaer Buitrago Latorre y John Alexander Gutierrez Lizarazo, como requisito para optar al título de Ingeniero Electrónico. Este proyecto fue dirigido por el PH.D. Roberto Ferro Escobar.
 						</p>
 					</article>
 				</section>
 				<section id="redes">
-					<div class="Youtube"><a href="#"></a></div>
-					<div class="Facebook"><a href="#"></a></div>
-					<div class="Twitter"><a href="#"></a></div>
-					<div class="Google"><a href="#"></a></div>
+					<div class="udistrital"><a href="https://www.udistrital.edu.co/" target="_blank"></a></div>
+					<div class="facultad"><a href="http://ingenieria1.udistrital.edu.co/udin1/" target="_blank"></a></div>
+					<div class="lider"><a href="http://comunidad.udistrital.edu.co/grupolider/" target="_blank"></a></div>
+					<div class="correo_inst"><a href="https://accounts.google.com/AddSession?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&hd=correo.udistrital.edu.co&sacu=1#identifier" target="_blank"></a></div>
 				</section>
 			</footer>
 

@@ -126,6 +126,10 @@ header #subheader #log a:hover{
 	text-decoration: none;
 }
 
+header #subheader nav{
+	padding: 30px;
+}
+
 header #subheader nav ul li a{
 	color:#000;
 	font-size:18px;
@@ -279,10 +283,7 @@ header #subheader nav ul li a:hover{
 	color: #AFDAB7;
 	list-style-type: none;
 	padding: 3px 0px;
-
 }
-
-
 
 #bienvenidos_gestion article h2{
 	font-family: sourcesans-ligth;
@@ -364,7 +365,7 @@ header #subheader nav ul li a:hover{
 
 #contenido article{
 	float: left;
-	margin-bottom: 20px;	
+	margin-bottom: 10px;	
 }
 
 #contenido article .title{
@@ -399,7 +400,7 @@ aside{
 	float: left;
 	margin-left: 20px;
 	background: #4d78b3;
-	padding: 10px 10px 0px 10px;
+	padding: 30px 10px 10px 10px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -409,7 +410,7 @@ aside{
 }
 
 aside .widget{
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	float: left;
 }
 
@@ -431,7 +432,12 @@ aside .widget li a:hover{
 	text-decoration: none;
 }
 
-aside .widget ul li {margin-bottom: 5px;}
+aside .widget ul li {
+	margin-bottom: 8px;
+	font-size: 18px;
+	font-family: Times;
+	
+}
 
 aside .widget img {width: 220px;}
 
@@ -487,21 +493,21 @@ footer #redes > div a {
 	display: inline-block;
 }
 
-footer #redes .Youtube{
-	background:url(../images/youtube.png);
+footer #redes .udistrital{
+	background:url(../images/udistrital.png);
 	margin-bottom: 10px;
 }
-footer #redes .Twitter{
-	background:url(../images/twitter.png);
+footer #redes .lider{
+	background:url(../images/lider.png);
 
 }
-footer #redes .Facebook{
-	background:url(../images/facebook.png);
+footer #redes .facultad{
+	background:url(../images/facultad.png);
 	margin-bottom: 10px;
 
 }
-footer #redes .Google{
-	background:url(../images/google.png);
+footer #redes .correo_inst{
+	background:url(../images/correo_inst.png);
 }
 
 footer #redes > div:hover{

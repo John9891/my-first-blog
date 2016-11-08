@@ -146,17 +146,17 @@ class TiempoAsignacion(models.Model):
 #        return '%i' % (self.IdDisponibilidad,)
 
 
-class HorarioOperador(models.Model):
-    TipoHorario = models.IntegerField(primary_key=True)
-    Jornada = models.CharField(max_length=45)
-    TipoDia = models.CharField(max_length=45)
+#class HorarioOperador(models.Model):
+#    TipoHorario = models.IntegerField(primary_key=True)
+#    Jornada = models.CharField(max_length=45)
+#    TipoDia = models.CharField(max_length=45)
 
-    class Meta:
-        db_table = 'HorarioOperador'
-        verbose_name_plural='HorarioOperador'
+#    class Meta:
+#        db_table = 'HorarioOperador'
+#        verbose_name_plural='HorarioOperador'
 
-    def __unicode__(self):
-        return '%i' % (self.TipoHorario,)
+#    def __unicode__(self):
+#        return '%i' % (self.TipoHorario,)
 
 
 class Operador(models.Model):
@@ -166,7 +166,7 @@ class Operador(models.Model):
     Perfil = models.CharField(max_length=45)
     CodOrigen = models.ForeignKey(Origen)
     Clave = models.CharField(max_length=45)
-    TipoHorario = models.ForeignKey(HorarioOperador)
+#    TipoHorario = models.ForeignKey(HorarioOperador)
 
     class Meta:
         db_table = 'Operador'

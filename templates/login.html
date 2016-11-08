@@ -1,7 +1,12 @@
 {% extends "admin/base.html" %}
-{% block title %} Login {% endblock %}
+{% block title %} Logueo {% endblock %}
+{% block branding %}
+<div id="logotipo" style="width:1200px; text-align: center;float: center"> <p><a href="" style="font-family: sourcesans-light;font-size: 20px;color: #FFFFFF;">Sistema de gestión de buses alimentadores de un sistema BRT </a></p>
+</div>
+{% endblock %}
+
 {% block content %}
-	<h1>Login</h1>
+	<h1>Logueo</h1>
 	{% if message %}
 	<b>{{message}}</b>
 	{% endif %}
